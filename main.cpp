@@ -1,6 +1,8 @@
-#include "lex.hpp"
 #include <iostream>
-#include <string.h>
+#include <string>
+
+#include "lex.hpp"
+#include "Token.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -8,8 +10,6 @@ int main(int argc, char *argv[])
         std::cerr << "prog paramater not found." << std::endl;
         exit(-1);
     }
-
-    std::cout << argv[1] << std::endl;
 
     return 0;
 }

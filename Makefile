@@ -16,4 +16,7 @@ clean:
 format: 
 	clang-format -i *.cpp *.hpp
 
+test:
+	./t/test.sh
+
 .PHONY: test clean format
