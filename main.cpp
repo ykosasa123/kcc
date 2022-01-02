@@ -1,11 +1,15 @@
-#include <lex.hpp>
+#include "lex.hpp"
 #include <iostream>
+#include <string.h>
 
-int main()
+int main(int argc, char *argv[])
 {
-    Lexer lex("aaa");
+    if (argc < 2) {
+        std::cerr << "prog paramater not found." << std::endl;
+        exit(-1);
+    }
 
-    std::cout << lex.getStringName(0) << std::endl;
+    std::cout << argv[1] << std::endl;
 
     return 0;
 }
