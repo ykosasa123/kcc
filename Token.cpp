@@ -18,7 +18,6 @@ std::string Token::toString()
 {
     std::stringstream str;
     Lexer lex("aaaa");
-
     str << "<'" << text << "'," <<  lex.getStringName(type) << ">";
 
     return str.str();
