@@ -8,7 +8,7 @@ do_test () {
     $1
 
     if [ "$?" != 0 ]; then
-        echo "err"
+        echo "$1 failed"
         exit 0
     fi
 }

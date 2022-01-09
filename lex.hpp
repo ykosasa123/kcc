@@ -17,13 +17,13 @@ public:
     const int _comma = 3;
     const int _lbrack = 4;
     const int _rbrack = 5;
+    const int _equel = 6;
 
 private:
     std::size_t pos;
     char c;
     std::string input;
-    const std::vector<std::string> tokenName = {"n/a", "<EOF>", "NAME", "COMMA", "LBRACK", "RBRACK"};
-
+    const std::vector<std::string> tokenName = {"n/a", "<EOF>", "NAME", "COMMA", "LBRACK", "RBRACK", "EQUEL"};
     void consume();
     void match(char x);
     bool isLettter();

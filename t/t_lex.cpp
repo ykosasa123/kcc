@@ -49,11 +49,20 @@ void do_lex_invalid_grammer()
     exit(-1);
 }
 
+void do_getInputLength()
+{
+    Lexer lex("[abc]");
+
+    assert_eq(lex.getInputLengh(), 5);
+}
+
 int main(int argc, char *argv[])
 {
     do_lex_correct_grammer();
 
     do_lex_invalid_grammer();
+
+    do_getInputLength();
 
     return 0;
 }

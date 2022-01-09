@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     }
 
     Lexer lex(argv[1]);
-    Parser parser(lex);
+    Parser parser(lex, 2);
 
     parser.start();
 

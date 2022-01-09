@@ -1,10 +1,14 @@
 #include <stdexcept>
 #include <sstream>
+#include <cstring>
 
 #include "lex.hpp"
 
 Lexer::Lexer(const char* in) : pos(0), c(0)
 {
+    if (strlen(in) <= 0) {
+        throw std::runtime_error("input string size is zero");
+    }
     input = in;
     c = input.at(0);
 }
@@ -30,7 +34,7 @@ void Lexer::match(char x)
         consume();
     } else {
         std::stringstream str;
-        str << "expecting " << x <<  "found " << c;
+        str << __FILE__ << " " << __func__ << ":" << __LINE__ << " expecting " << x <<  "found " << c;
         throw std::runtime_error(str.str());
     }
 }
@@ -74,12 +78,15 @@ Token Lexer::nextToken()
             case ']':
                 consume();
                 return Token(_rbrack, "]");
+            case '=':
+                consume();
+                return Token(_equel, "=");
             default:
                 if (isLettter()) {
                     return name();
                 } else {
                     std::stringstream str;
-                    str << "invalid character " << c;
+                    str << __FILE__ << " " << __func__ << ":" << __LINE__ << " invalid character " << c;
                     throw std::runtime_error(str.str());
                 }
         }

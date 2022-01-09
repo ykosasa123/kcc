@@ -17,7 +17,7 @@ Token::~Token(void)
 std::string Token::toString()
 {
     std::stringstream str;
-    Lexer lex("");
+    Lexer lex("aa");
     str << "<'" << text << "'," <<  lex.getStringName(type) << ">";
 
     return str.str();
