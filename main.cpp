@@ -3,6 +3,7 @@
 
 #include "lex.hpp"
 #include "Token.hpp"
+#include "parser.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -10,6 +11,11 @@ int main(int argc, char *argv[])
         std::cerr << "prog paramater not found." << std::endl;
         exit(-1);
     }
+
+    Lexer lex(argv[1]);
+    Parser parser(lex);
+
+    parser.start();
 
     return 0;
 }

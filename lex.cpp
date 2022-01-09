@@ -9,10 +9,6 @@ Lexer::Lexer(const char* in) : pos(0), c(0)
     c = input.at(0);
 }
 
-Lexer::~Lexer()
-{
-}
-
 const std::string& Lexer::getStringName(int i)
 {
     return tokenName[i];
